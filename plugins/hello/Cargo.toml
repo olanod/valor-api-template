@@ -1,0 +1,18 @@
+[package]
+name = "hello"
+version = "0.0.1"
+authors = ["Daniel Olano <daniel@olanod.com>"]
+edition = "2018"
+publish = false
+
+[dependencies]
+valor = { git = "https://github.com/valibre-org/valor.git", branch = "main", package = "valor_core", features = ["util", "serde"] }
+
+[build-dependencies]
+vlugin = { git = "https://github.com/valibre-org/valor.git", branch = "main", package = "valor_plugin_build" }
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+valor = { git = "https://github.com/valibre-org/valor.git", branch = "main", package = "valor_core", features = ["util", "web"] }
+
+[lib]
+crate-type = ["cdylib", "lib"]

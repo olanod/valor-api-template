@@ -1,0 +1,5 @@
+{
+	"plugins": [
+		{"type":"native","name":"hello"}
+	]
+}
